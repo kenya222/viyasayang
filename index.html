@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Viya 💕</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ff9a9e, #fecfef, #fecfef, #ff9a9e);
+            background-size: 400% 400%;
+            animation: gradient 8s ease infinite;
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .love-text {
+            font-size: 4rem;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            animation: pulse 2s ease-in-out infinite;
+            margin-bottom: 2rem;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #ff3838;
+            transform: rotate(45deg);
+            animation: float 6s linear infinite;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #ff3838;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -10px;
+            left: 0;
+        }
+
+        .heart::after {
+            top: 0;
+            left: -10px;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(45deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(45deg);
+                opacity: 0;
+            }
+        }
+
+        .message {
+            font-size: 2rem;
+            color: #fff;
+            text-align: center;
+            margin-top: 2rem;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+            animation-delay: 1s;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .special-message {
+            position: absolute;
+            bottom: 50px;
+            font-size: 1.5rem;
+            color: #fff;
+            text-align: center;
+            animation: bounce 3s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #fff;
+            border-radius: 50%;
+            animation: sparkle 1.5s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        .viya-name {
+            font-size: 5rem;
+            background: linear-gradient(45deg, #ff6b6b, #ffd93d, #6bcf7f, #4d96ff);
+            background-size: 400%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rainbow 3s ease-in-out infinite;
+        }
+
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .heart-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 2rem 0;
+        }
+
+        .big-heart {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: #ff3838;
+            transform: rotate(45deg);
+            animation: heartbeat 1.5s ease-in-out infinite;
+            margin: 50px;
+        }
+
+        .big-heart::before,
+        .big-heart::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: #ff3838;
+            border-radius: 50%;
+        }
+
+        .big-heart::before {
+            top: -50px;
+            left: 0;
+        }
+
+        .big-heart::after {
+            top: 0;
+            left: -50px;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: rotate(45deg) scale(1); }
+            25% { transform: rotate(45deg) scale(1.1); }
+            50% { transform: rotate(45deg) scale(1); }
+            75% { transform: rotate(45deg) scale(1.1); }
+            100% { transform: rotate(45deg) scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="love-text">I Love You</div>
+        <div class="viya-name">Viya</div>
+        
+        <div class="heart-container">
+            <div class="big-heart"></div>
+        </div>
+        
+        <div class="message">
+            Kamu adalah cahaya dalam hidupku<br>
+            Setiap detik bersamamu adalah berkah<br>
+            Aku mencintaimu lebih dari kata-kata bisa ungkapkan
+        </div>
+        
+        <div class="special-message">
+            Untuk kekasihku tersayang 💝
+        </div>
+    </div>
+
+    <script>
+        // Membuat efek love (hati) yang melayang
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
+
+        // Membuat efek sparkle
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = Math.random() * 100 + 'vw';
+            sparkle.style.top = Math.random() * 100 + 'vh';
+            sparkle.style.animationDelay = Math.random() * 2 + 's';
+            document.body.appendChild(sparkle);
+
+            setTimeout(() => {
+                sparkle.remove();
+            }, 1500);
+        }
+
+        // Menjalankan efek setiap detik
+        setInterval(createHeart, 300);
+        setInterval(createSparkle, 200);
+
+        // Efek ketika klik di mana saja
+        document.addEventListener('click', function() {
+            for(let i = 0; i < 10; i++) {
+                setTimeout(() => {
+                    createHeart();
+                    createSparkle();
+                }, i * 100);
+            }
+        });
+
+        // Pesan muncul satu per satu
+        const messages = [
+            "Viya, kamu adalah alasan aku tersenyum setiap hari",
+            "Aku bersyukur memiliki kamu dalam hidupku",
+            "Cintaku padamu tumbuh lebih besar setiap detik",
+            "Kamu adalah rumahku, tempat hatiku berlabuh",
+            "Aku akan selalu mencintaimu, sekarang dan selamanya"
+        ];
+
+        let messageIndex = 0;
+        const messageDiv = document.querySelector('.message');
+
+        setInterval(() => {
+            messageDiv.style.opacity = '0';
+            setTimeout(() => {
+                messageDiv.innerHTML = messages[messageIndex].replace(/\n/g, '<br>');
+                messageDiv.style.opacity = '1';
+                messageIndex = (messageIndex + 1) % messages.length;
+            }, 500);
+        }, 5000);
+    </script>
+</body>
+</html>
